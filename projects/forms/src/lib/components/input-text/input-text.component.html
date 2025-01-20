@@ -1,0 +1,21 @@
+<div class="form-group">
+  <label [for]="inputId">{{label}}</label>
+  <input
+    [type]="type"
+    class="form-control"
+    [id]="inputId"
+    [formControl]="control"
+    [attr.placeholder]="placeholder"
+    [attr.maxlength]="maxlength"
+    [attr.minlength]="minlength"
+    [attr.pattern]="pattern"
+    [attr.required]="required ? true : null"
+    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+  />
+  <div *ngIf="control.invalid && (control.dirty || control.touched)" class="text-red-500 text-sm mt-1">
+    <div *ngIf="control.errors?.['required']">Este Campo es Requerido.</div>
+    <div *ngIf="control.errors?.['minlength']">Minimo de caracteres son {{control.errors?.['minlength']?.requiredLength}}.</div>
+    <div *ngIf="control.errors?.['maxlength']">Maximo de caracteres son {{control.errors?.['maxlength']?.requiredLength}}.</div>
+    <div *ngIf="control.errors?.['pattern']">Formato Invalido.</div>
+  </div>
+</div>

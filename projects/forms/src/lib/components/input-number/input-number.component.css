@@ -1,0 +1,48 @@
+.form-group {
+  position: relative;
+}
+
+.prefix, .postfix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 0.5rem;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  z-index: 1;
+}
+
+.prefix {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.postfix {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-container input {
+  flex: 1;
+  padding-left: 2rem; /* Adjust based on prefix width */
+}
+
+.input-container input.with-postfix {
+  padding-right: 2rem; /* Adjust based on postfix width */
+}
+
+.input-container input.without-postfix {
+  padding-right: 0;
+}

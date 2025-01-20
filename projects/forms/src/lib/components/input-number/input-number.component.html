@@ -1,0 +1,26 @@
+<div class="form-group">
+  <label [for]="inputId" class="block text-sm font-medium text-gray-700">{{label}}</label>
+  <div class="input-container mt-1">
+    <span *ngIf="prefix" class="prefix">{{prefix}}</span>
+    <input
+      type="number"
+      class="form-control block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      [id]="inputId"
+      [name]="inputId"
+      [formControl]="control"
+      [attr.placeholder]="placeholder"
+      [attr.min]="min"
+      [attr.max]="max"
+      [attr.step]="step"
+      [attr.required]="required ? true : null"
+      [disabled]="disabled"
+      [ngClass]="{'with-postfix': postfix, 'without-postfix': !postfix}"
+    />
+    <span *ngIf="postfix" class="postfix">{{postfix}}</span>
+  </div>
+  <div *ngIf="control.invalid && (control.dirty || control.touched)" class="text-red-500 text-sm mt-1">
+    <div *ngIf="control.errors?.['required']">Los {{label}} son requeridos </div>
+    <div *ngIf="control.errors?.['min']">The minimo valor es {{min}}</div>
+    <div *ngIf="control.errors?.['max']">The maximo valor es {{max}}</div>
+  </div>
+</div>
