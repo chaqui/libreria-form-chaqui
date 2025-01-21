@@ -1,0 +1,40 @@
+<div
+  *ngIf="isModalVisible"
+  class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
+  id="modal-client"
+>
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white w-1/2 rounded-lg shadow-lg p-8">
+      <div class="flex justify-between items-center">
+        <h2 class="text-2xl font-bold">{{ title }}</h2>
+        <button
+          type="button"
+          (click)="cerrarModal()"
+          class="text-red-500 text-2xl"
+        >
+          &times;
+        </button>
+      </div>
+      <div class="flex justify-between items-center mt-4">
+        <p>{{ contenido }}</p>
+      </div>
+      <div class="flex justify-end items-center mt-4 space-x-4">
+        <div class="flex justify-between items-center">
+          <button
+            type="button"
+            (click)="cerrarModal()"
+            class="bg-red-500 text-white p-2 rounded-lg m-2"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            (click)="confirmar()"
+            class="bg-blue-500 text-white p-2 rounded-lg m-2"
+          >
+            Confirmar
+          </button>
+        </div>
+    </div>
+  </div>
+</div>

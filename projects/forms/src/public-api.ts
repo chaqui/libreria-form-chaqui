@@ -10,3 +10,4 @@ export * from './lib/components/input-number/input-number.component';
 export * from './lib/formPrincipal/form-principal';
 export * from './lib/Models/Validation.model';
 export * from './lib/Models/Item.model';
+export * from './lib/components/confirmation-modal/confirmation-modal.component';
