@@ -1,12 +1,21 @@
 {
-  "name": "forms",
-  "version": "0.0.1",
+  "name": "forms-chaqui",
+  "version": "0.0.53",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaqui/libreria-form-chaqui"
+  },
   "peerDependencies": {
-    "@angular/common": "^19.1.0",
-    "@angular/core": "^19.1.0"
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0"
   },
   "dependencies": {
+    "tailwindcss": "^3.4.17",
     "tslib": "^2.3.0"
   },
+  "styles": [
+    "projects/forms/src/styles/tailwind.css",
+    "src/styles.css"
+  ],
   "sideEffects": false
 }

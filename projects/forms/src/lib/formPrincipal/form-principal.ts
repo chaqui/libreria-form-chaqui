@@ -1,7 +1,7 @@
 import Validation from "../Models/Validation.model";
 
 
-export default class FormPrincipal {
+export  class FormPrincipal {
   private validations: Validation[] = []; // Validaciones
 
 

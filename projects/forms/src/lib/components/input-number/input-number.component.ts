@@ -9,6 +9,7 @@ import Validation from '../../Models/Validation.model';
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './input-number.component.html',
   styleUrl: './input-number.component.css',
+  exportAs: 'inputNumber',
 })
 export class InputNumberComponent implements OnInit {
   control: FormControl; // Control del formulario
