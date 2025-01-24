@@ -1,0 +1,46 @@
+<div class="form-group">
+  <label [for]="inputId" class="block text-sm font-medium text-gray-700">{{
+    label
+  }}</label>
+  <div class="relative mt-1 flex items-stretch w-full">
+    <input
+      type="text"
+      class="form-control block w-full px-3 py-2 border border-gray-300 rounded-l-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      [id]="inputId"
+      [placeholder]="placeholder"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+      (focus)="showDropdown = true"
+      (blur)="hideDropdown()"
+    />
+    <div
+      class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"
+    >
+      <svg
+        class="h-5 w-5 text-gray-500"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </div>
+    <ul
+      *ngIf="showDropdown && filteredOptions.length > 0"
+      class="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+    >
+      <li
+        *ngFor="let option of filteredOptions"
+        class="cursor-pointer select-none relative py-2 pl-3 pr-9"
+        (mousedown)="selectOption(option)"
+      >
+        <span class="block truncate">{{ option.value }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
