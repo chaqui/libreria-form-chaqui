@@ -9,7 +9,8 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Item } from 'forms';
+import { Item } from '../../Models/Item.model';
+
 
 @Component({
   selector: 'app-select-search',
